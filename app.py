@@ -21,6 +21,7 @@ st.set_page_config(
 )
 
 # --------------------------------------------------------------------------------------
+<<<<<<< HEAD
 # Custom CSS — enlarge layout to fill a 1920x1080 display
 # --------------------------------------------------------------------------------------
 st.markdown(
@@ -72,6 +73,8 @@ st.markdown(
 )
 
 # --------------------------------------------------------------------------------------
+=======
+>>>>>>> 51c19d553478f65f4904926d2182d4d7aab7394a
 # Static reference data (from project technical documentation)
 # --------------------------------------------------------------------------------------
 FACTORY_COORDS = {
@@ -325,7 +328,11 @@ with tab1:
         color="Efficiency Score", color_continuous_scale="RdYlGn",
         hover_data=["Shipments", "Delay Frequency (%)"],
     )
+<<<<<<< HEAD
     fig.update_layout(height=700, yaxis_title="", margin=dict(l=0, r=0, t=10, b=0))
+=======
+    fig.update_layout(height=600, yaxis_title="", margin=dict(l=0, r=0, t=10, b=0))
+>>>>>>> 51c19d553478f65f4904926d2182d4d7aab7394a
     st.plotly_chart(fig, use_container_width=True)
 
 # ---------------------------------------------------------------------
@@ -383,7 +390,11 @@ with tab2:
 
         fig_map.update_layout(
             geo=dict(scope="usa", projection_type="albers usa"),
+<<<<<<< HEAD
             height=680, margin=dict(l=0, r=0, t=10, b=0),
+=======
+            height=550, margin=dict(l=0, r=0, t=10, b=0),
+>>>>>>> 51c19d553478f65f4904926d2182d4d7aab7394a
         )
         st.plotly_chart(fig_map, use_container_width=True)
 
@@ -430,7 +441,11 @@ with tab3:
             title="Lead Time Distribution by Ship Mode",
             category_orders={"Ship Mode": mode_agg["Ship Mode"].tolist()},
         )
+<<<<<<< HEAD
         fig_box.update_layout(showlegend=False, height=500)
+=======
+        fig_box.update_layout(showlegend=False, height=420)
+>>>>>>> 51c19d553478f65f4904926d2182d4d7aab7394a
         st.plotly_chart(fig_box, use_container_width=True)
     with c2:
         fig_bar = px.bar(
@@ -438,7 +453,11 @@ with tab3:
             title="Delay Frequency by Ship Mode (%)",
             category_orders={"Ship Mode": mode_agg["Ship Mode"].tolist()},
         )
+<<<<<<< HEAD
         fig_bar.update_layout(showlegend=False, height=500, yaxis_title="Delay Frequency (%)")
+=======
+        fig_bar.update_layout(showlegend=False, height=420, yaxis_title="Delay Frequency (%)")
+>>>>>>> 51c19d553478f65f4904926d2182d4d7aab7394a
         st.plotly_chart(fig_bar, use_container_width=True)
 
     st.markdown("**Cost–Time Tradeoff (descriptive)**")
@@ -451,7 +470,11 @@ with tab3:
         text="Ship Mode", labels={"Avg_Lead_Time": "Avg Lead Time (days)", "Avg_Cost": "Avg Cost ($)"},
     )
     fig_scatter.update_traces(textposition="top center")
+<<<<<<< HEAD
     fig_scatter.update_layout(height=500)
+=======
+    fig_scatter.update_layout(height=420)
+>>>>>>> 51c19d553478f65f4904926d2182d4d7aab7394a
     st.plotly_chart(fig_scatter, use_container_width=True)
 
     st.markdown("**Summary table**")
@@ -495,7 +518,11 @@ with tab4:
             y=lead_time_threshold, line_dash="dash", line_color="red",
             annotation_text="Delay threshold",
         )
+<<<<<<< HEAD
         fig_timeline.update_layout(height=550, yaxis_title="Lead Time (days)")
+=======
+        fig_timeline.update_layout(height=450, yaxis_title="Lead Time (days)")
+>>>>>>> 51c19d553478f65f4904926d2182d4d7aab7394a
         st.plotly_chart(fig_timeline, use_container_width=True)
 
         c1, c2 = st.columns(2)
@@ -504,7 +531,11 @@ with tab4:
             mode_split = route_df["Ship Mode"].value_counts().reset_index()
             mode_split.columns = ["Ship Mode", "Count"]
             fig_pie = px.pie(mode_split, names="Ship Mode", values="Count", hole=0.4)
+<<<<<<< HEAD
             fig_pie.update_layout(height=400, margin=dict(l=0, r=0, t=10, b=0))
+=======
+            fig_pie.update_layout(height=320, margin=dict(l=0, r=0, t=10, b=0))
+>>>>>>> 51c19d553478f65f4904926d2182d4d7aab7394a
             st.plotly_chart(fig_pie, use_container_width=True)
         with c2:
             st.markdown("**Product Mix**")
@@ -513,7 +544,11 @@ with tab4:
                 .sort_values(ascending=False).reset_index()
             )
             fig_prod = px.bar(prod_split, x="Units", y="Product Name", orientation="h")
+<<<<<<< HEAD
             fig_prod.update_layout(height=400, yaxis_title="", margin=dict(l=0, r=0, t=10, b=0))
+=======
+            fig_prod.update_layout(height=320, yaxis_title="", margin=dict(l=0, r=0, t=10, b=0))
+>>>>>>> 51c19d553478f65f4904926d2182d4d7aab7394a
             st.plotly_chart(fig_prod, use_container_width=True)
 
         with st.expander("View raw order-level records"):
@@ -528,4 +563,8 @@ st.divider()
 st.caption(
     "Nassau Candy Distributor — Factory-to-Customer Shipping Route Efficiency Analysis · "
     f"Data as of {datetime.now().strftime('%B %Y')}"
+<<<<<<< HEAD
 )
+=======
+)
+>>>>>>> 51c19d553478f65f4904926d2182d4d7aab7394a
